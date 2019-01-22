@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\begin{document}
+
+\title{Discrete Notes}
+
+\section*{2019-01-22}
+
+\subsubsection{Truth Tables}
+
+\begin{itemize}
+  \item Disjunction ($\lor$)
+  \item Conjunction ($\land$)
+  \item Exclusive Or ($\oplus$)
+  \item Biconditional ($\leftrightarrow$)
+  \item Conditional/implication ($\rightarrow$)
+    \begin{itemize}
+      \item "If $p$ (hypothesis) then $q$ (conclusion)"
+      \item "$p$ implies $q$"
+    \end{itemize}
+\end{itemize}
+
+\begin{tabular}{c | c | c | c | c | c | c}
+  $p$ & $q$ & $p \lor q$ & $p \land q$ & $p \oplus q$ & $p \leftrightarrow q$ & $p \rightarrow q$ \\
+  \hline
+  T & T & T & T & F & T & T \\
+  \hline
+  T & F & T & F & T & F & F \\
+  \hline
+  F & T & T & F & T & F & T \\
+  \hline
+  F & F & F & F & F & T & T
+\end{tabular}
+\end{document}
