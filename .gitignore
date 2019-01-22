@@ -1,2 +1,6 @@
 notes.md
 notes.pdf
+
+# Latex temp files
+*.aux
+*.log

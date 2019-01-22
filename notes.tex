@@ -1,25 +1,52 @@
 \documentclass{article}
 
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
 \begin{document}
 
 \title{Discrete Notes}
 
 \section*{2019-01-22}
 
-\subsubsection{Truth Tables}
+\begin{definition}{Proposition}
+  A true/false statement
+\end{definition}
 
+Examples:
 \begin{itemize}
+  \item "Today is Tuesday" is a bad proposition because it changes; currently true.
+  \item $2+e=\pi$ is a proposition; false.
+  \item $x+10=3x-5$ is not a proposition; varies with $x$.
+  \item $x+10=3x-5$ when $x=10$ is a proposition (false)
+  \item $x^2 + 3$ is positive is not a proposition
+  \item $(x + y)^2 = x^2 + 2xy + y^2$ is not a proposition
+\end{itemize}
+
+\subsection*{Connectives}
+
+\begin{definition}{Connective}
+  Ways to build compound propositions from other propositions
+\end{definition}
+
+Note: Propositions are denoted p, q, r, \ldots
+
+Types of Connectives:
+\begin{itemize}
+  \item Negation ($2+e=\pi$ becomes $2+e \neq \pi$); the negation of $p$ is $\neg p$
   \item Disjunction ($\lor$)
   \item Conjunction ($\land$)
   \item Exclusive Or ($\oplus$)
   \item Biconditional ($\leftrightarrow$)
   \item Conditional/implication ($\rightarrow$)
     \begin{itemize}
-      \item "If $p$ (hypothesis) then $q$ (conclusion)"
-      \item "$p$ implies $q$"
+      \item ``If $p$ (hypothesis) then $q$ (conclusion)''
+      \item ``$p$ implies $q$''
     \end{itemize}
 \end{itemize}
 
+\subsection*{Truth Tables}
 \begin{tabular}{c | c | c | c | c | c | c}
   $p$ & $q$ & $p \lor q$ & $p \land q$ & $p \oplus q$ & $p \leftrightarrow q$ & $p \rightarrow q$ \\
   \hline
