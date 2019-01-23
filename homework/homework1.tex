@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\title{Homework 1}
+\author{Chandler Swift}
+\usepackage{hyperref}
+
+\begin{document}
+\maketitle
+\begin{itemize}
+  \item [18]
+    \begin{itemize}
+      \item [a] True
+      \item [b] False
+      \item [c] True, as monkeys are permitted on commercial flights with appropriate documentation as emotional support animals. \url{https://knpr.org/knpr/2016-08/emotional-support-monkey-allowed-airplane}
+      \item [d] False
+    \end{itemize}
+  \item [24]
+    \begin{itemize}
+      \item [d] If Willy cheats, then he gets caught.
+      \item [e] If you can access the website, then you have paid the subscription fee.
+      \item [f] If you got elected, then you knew the right peopole.
+      \item [g] If Carol is on a boat, then Carol is seasick.
+    \end{itemize}
+  \item [34]
+    \begin{itemize}
+      \item [a]
+        \begin{tabular}{c | c | c}
+          $p$ & $\neg p$ & $p \rightarrow \neg p$ \\
+          \hline
+          T & F & F \\
+          F & T & T
+        \end{tabular}
+       \item [b]
+        \begin{tabular}{c | c | c}
+          $p$ & $\neg p$ & $p \leftrightarrow \neg p$ \\
+          \hline
+          T & F & F \\
+          F & T & F
+        \end{tabular}
+      \item [c]
+        \begin{tabular}{c | c | c | c}
+          $p$ & $q$ & $p \lor q$ & $p \oplus (p \lor q)$ \\
+          \hline
+          T & T & T & F \\
+          T & F & T & F \\
+          F & T & T & T \\
+          F & F & F & F
+        \end{tabular}
+      \item [d]
+        \begin{tabular}{c | c | c | c | c }
+          $p$ & $q$ & $p \land q$ & $p \lor q$ & $(p \land q) \rightarrow (p \lor q)$ \\
+          \hline
+          T & T & T & T & T \\
+          T & F & F & T & T \\
+          F & T & F & T & T \\
+          F & F & F & F & T 
+        \end{tabular}
+      \item [e]
+        \begin{tabular}{c | c | c | c | c}
+          $p$ & $q$ & $q \rightarrow \neg p$ & $p \leftrightarrow q$ & $(q \rightarrow \neg p) \leftrightarrow (p \rightarrow q)$ \\
+          \hline
+          T & T & F & T & F \\
+          T & F & T & F & F \\
+          F & T & T & F & F \\
+          F & F & T & T & T
+        \end{tabular}
+      \item [f]
+        \begin{tabular}{c | c | c | c | c}
+          $p$ & $q$ & $p \leftrightarrow q$ & $p \leftrightarrow \neg q$ & $(p \leftrightarrow q) \oplus (p \leftrightarrow \neg q)$ \\
+          \hline
+          T & T & T & F & T \\
+          T & F & F & T & T \\
+          F & T & F & T & T \\
+          F & F & T & F & T
+        \end{tabular}
+    \end{itemize}
+  \item [48]
+    \begin{itemize}
+      \item [a]
+        $11000 \land (01011 \lor 11011) = 11000$
+      \item [b]
+        $(01111 \land 10101) \lor 01000 = 01101$
+      \item [c]
+        $(01010 \oplus 11011) \oplus 01000 = 11001$
+      \item [d]
+        $(11011 \lor 01010) \land (10001 \lor 11011) = 11011$
+    \end{itemize}
+\end{itemize}
+
+\end{document}

@@ -4,3 +4,4 @@ notes.pdf
 # Latex temp files
 *.aux
 *.log
+*.out
