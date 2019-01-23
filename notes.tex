@@ -58,4 +58,96 @@ Types of Connectives:
   \hline
   F & F & F & F & F & T & T
 \end{tabular}
+
+\section*{2019-01-23}
+
+``Anyone getting at least 90\% in this class gets an A.'' is an implication. Therefore there must be a hypothesis and a conclusion. ``\textbf{If} someone gets at least 90\%, \textbf{then} they get an A.'' 
+
+\begin{tabular}{c | c | c | l }
+  Percentage & Grade & Truth Value & Notes \\
+  \hline
+  93 & A & T & This is true. \\
+  88 & A & T & The implication doesn't dictate grade here. \\
+  70 & C & T \\
+  95 & B & F & The conclusion wasn't met but the hypothesis was. \\
+
+\end{tabular}
+
+\begin{quote}
+``You can't win if you don't play.''
+\end{quote}
+
+If $p \rightarrow q$, what is $p$ and what is $q$?
+
+$p$: If I don't play,
+
+$q$: then I won't win.
+
+\begin{quote}
+You have to pay to play.
+\end{quote}
+
+This is false when playing happened without paying. 
+
+\begin{quote}
+  If $x=2$ then $x^2=4$. (true) \newline
+  If $x^2=4$ then $x=2$. (false)
+\end{quote}
+
+\begin{tabular}{c|c|c|c|c}
+  $x$ & $x=2$ & $x^2=4$ & $x=2 \rightarrow x^2=4$ & $x^2=4 \rightarrow x=2$ \\
+  \hline
+  2 & T & T & T & T \\
+  5 & F & F & T & T \\
+  -2 & F & T & T & F
+\end{tabular}
+
+Note in this case there is no fourth row, because there is no x value to make that statement true.
+
+Expanding on previous:
+
+\begin{tabular}{c | c | c | c | c | c | c | c | c | c | c | c}
+  $p$ & $q$ & $p \lor q$ & $p \land q$ & $p \oplus q$ & $p \leftrightarrow q$ & $p \rightarrow q$ & $\neg p$ & $\neg q$ & $q \rightarrow p$ & $\neg p \rightarrow \neg q$ & $\neg q \rightarrow \neg p$ \\
+  \hline
+  T & T & T & T & F & T & T & F & F & T & T & T \\
+  \hline
+  T & F & T & F & T & F & F & F & T & T & T & F\\
+  \hline
+  F & T & T & F & T & F & T & T & F & F & F & T\\
+  \hline
+  F & F & F & F & F & T & T & T & T & T & T & T
+\end{tabular}
+
+$q \rightarrow p$ is the converse; $\neg p \rightarrow \neg q$ is the inverse; $\neg q \rightarrow \neg p$ is the contrapositive. 
+
+\subsubsection*{Example: $(p \land \neg q) \rightarrow (q \lor r)$}
+\begin{tabular}{c|c|c|c|c|c|c}
+  $p$ & $q$ & $r$ & $\neg q$ & $p \land \neg q$ & $q \lor r$ & $(p \land \neg q) \rightarrow (q \lor r)$ \\
+  \hline
+  T & T & T & F & F & T & T \\
+  T & T & F & F & F & T & T \\
+  T & F & T & T & T & T & T \\
+  T & F & F & T & T & F & F \\
+  \hline
+  F & T & T & F & F & T & T \\
+  F & T & F & F & F & T & T \\
+  F & F & T & T & F & T & T \\
+  F & F & F & T & F & F & T
+\end{tabular}
+
+\section*{Bit Strings}
+Ex: 001101001 is a bitstring of length 9.
+
+$001101001 \lor 101010101 = 101111101$
+
+Note: $p \leftrightarrow q$ is not the same as $\neg (p \oplus q)$ even though they are equivalent. They are different propositions, though their truth values are always the same. They are not equal, but are logically equivalent: $p \rightarrow q \equiv \neg q \rightarrow \neg p$.
+
+\begin{definition}{Tautology}
+  A compound proposition that always evaluates to true; for example, $p \lor \neg p$. (Opposite of a contradiction)
+\end{definition}
+
+\begin{definition}{Contradiction}
+  A compound proposition that always evaluates to false; for example, $p \land \neg p$. (Opposite of a tautology)
+\end{definition}
+
 \end{document}
