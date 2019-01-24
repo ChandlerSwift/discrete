@@ -135,7 +135,7 @@ $q \rightarrow p$ is the converse; $\neg p \rightarrow \neg q$ is the inverse; $
   F & F & F & T & F & F & T
 \end{tabular}
 
-\section*{Bit Strings}
+\subsection*{Bit Strings}
 Ex: 001101001 is a bitstring of length 9.
 
 $001101001 \lor 101010101 = 101111101$
@@ -147,7 +147,73 @@ Note: $p \leftrightarrow q$ is not the same as $\neg (p \oplus q)$ even though t
 \end{definition}
 
 \begin{definition}{Contradiction}
-  A compound proposition that always evaluates to false; for example, $p \land \neg p$. (Opposite of a tautology)
+  A compound proposition that always evaluates to false; for example, $p \land \neg p$. (Comparable to a tautology) If a proposition is not a contradiction, it is then \textit{satisfyable}.
 \end{definition}
+
+\section*{2019-01-24}
+
+\subsection*{Tautologies}
+
+Which of these is a tautology? (three are)
+
+\begin{itemize}
+  \item $[(p \rightarrow q) \land (r \rightarrow q)] \rightarrow [(p \land r) \rightarrow q]$
+  \item $[(p \rightarrow q) \lor  (r \rightarrow q)] \rightarrow [(p \land r) \rightarrow q]$
+  \item $[(p \rightarrow q) \lor  (r \rightarrow q)] \rightarrow [(p \lor r) \rightarrow q]$
+  \item $[(p \rightarrow q) \land  (r \rightarrow q)] \rightarrow [(p \lor r) \rightarrow q]$
+\end{itemize}
+
+Connectives are binary operators. This means that $a \land b \land c$ can be
+read as either $(a \land b) \land c$ or $a \land (b \land c)$. It doesn't
+matter as long as they're all the same operation. 
+
+However, if they are \textit{not} all the same operation, this doesn't work: $a \land b \lor c$ has two non equivalent possibilities, $(a \land b) \lor c$ and $a \land (b \lor c)$.
+
+\subsection*{Logical Equivalences}
+
+\begin{definition}{Logically Equivalent}
+  $S(p, q, r, \ldots)$ is said to be logically equivalent to $T(p, q, r, \ldots)$ whenever $S \leftrightarrow T$ is a tautology. This is written $S \equiv T$.
+\end{definition}
+
+Note: In all of the following cases, \textit{not} ($\neg$ is the first operation to be applied.
+
+\begin{itemize}
+  \item Associative Laws:
+    $(a \land b) \land c \equiv a \land (b \land c)$ and
+    $(a \lor b) \lor c \equiv a \lor (b \lor c)$, which means that parentheses
+    can be dropped when order doesn't matter.
+  \item Commutative Laws:
+    $a \lor b \equiv b \lor a$ and $a \land b \equiv b \land a$
+  \item Double Negation Law:
+    $\neg(\neg a) \equiv a$
+  \item De Morgan's Laws:
+    $\neg(a \lor b) \equiv \neg a \land \neg b$ and
+    $\neg(a \land b) \equiv \neg a \lor \neg b$
+  \item Identity Laws:
+    $a \land T \equiv a$ and
+    $a \lor F \equiv a$
+  \item Domination Laws:
+    $a \land F \equiv F$ and
+    $a \lor T \equiv T$
+  \item Idempotent Laws
+    $a \lor a \equiv a$ and
+    $a \land a \equiv a$
+  \item Distributive Laws:
+    $a \land (b \lor c) \equiv (a \lor b) \land (a \lor c)$ and
+    $a \lor (b \land c) \equiv (a \land b) \lor (a \land c)$
+  \item Apparently-no-name Laws:
+    $p \leftrightarrow q \equiv \neg (p \oplus q)$ and
+    $p \rightarrow q \equiv \neg p \lor q$
+\end{itemize}
+
+Aside: $(p \land q) \lor (p \rightarrow q) \equiv p \rightarrow q$
+
+$$(p \land q) \lor (p \rightarrow q)$$
+$$\equiv (p \land q) \lor \neg p \lor q$$
+$$\equiv \neg p \lor (p \land q) \lor q$$
+$$\equiv [(\neg p \lor p) \land (\neg p \lor q)] \lor q$$
+$$\equiv (\neg p \lor q) \lor q)$$
+$$\equiv \neg p \lor q$$
+$$\equiv p \rightarrow q$$
 
 \end{document}
