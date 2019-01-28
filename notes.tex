@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsthm}
+\usepackage{amsmath}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
@@ -154,13 +155,13 @@ Note: $p \leftrightarrow q$ is not the same as $\neg (p \oplus q)$ even though t
 
 \subsection*{Tautologies}
 
-Which of these is a tautology? (three are)
+Which of these is a tautology? (three are: All but the last)
 
 \begin{itemize}
   \item $[(p \rightarrow q) \land (r \rightarrow q)] \rightarrow [(p \land r) \rightarrow q]$
   \item $[(p \rightarrow q) \lor  (r \rightarrow q)] \rightarrow [(p \land r) \rightarrow q]$
-  \item $[(p \rightarrow q) \lor  (r \rightarrow q)] \rightarrow [(p \lor r) \rightarrow q]$
   \item $[(p \rightarrow q) \land  (r \rightarrow q)] \rightarrow [(p \lor r) \rightarrow q]$
+  \item $[(p \rightarrow q) \lor  (r \rightarrow q)] \rightarrow [(p \lor r) \rightarrow q]$ (Can be disproven with $p = \text{True}, q = \text{False}, r = \text{False}$)
 \end{itemize}
 
 Connectives are binary operators. This means that $a \land b \land c$ can be
@@ -215,5 +216,11 @@ $$\equiv [(\neg p \lor p) \land (\neg p \lor q)] \lor q$$
 $$\equiv (\neg p \lor q) \lor q)$$
 $$\equiv \neg p \lor q$$
 $$\equiv p \rightarrow q$$
+
+\section*{2019-01-28}
+
+\subsection*{}
+
+
 
 \end{document}
