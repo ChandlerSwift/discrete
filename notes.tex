@@ -216,11 +216,52 @@ $$\equiv [(\neg p \lor p) \land (\neg p \lor q)] \lor q$$
 $$\equiv (\neg p \lor q) \lor q)$$
 $$\equiv \neg p \lor q$$
 $$\equiv p \rightarrow q$$
-
+ 
 \section*{2019-01-28}
 
-\subsection*{}
+(Proved logical equivalences)
 
+\section*{2019-01-31}
 
+\subsection*{Chapter 2: Predicates and Quantifiers}
+
+\begin{definition}{Propositional Function}
+  A function that gives a proposition for every $x$ value
+\end{definition}
+
+\begin{definition}{Universe of Discourse}
+  All allowable values for $x$.
+\end{definition}
+
+\begin{definition}{Quantifier}
+  A way of making a proposition out of a collection of propositional functions.
+\end{definition}
+
+\begin{definition}{Universal Quantification}
+  The statement that $p(x)$ is true for all $x$ in the universe of discourse,
+  noted with $\forall$.
+\end{definition}
+
+For example, the statement $x=2 \rightarrow x=4$ is true for all x, and as such
+is a universally qualified statement, notated as
+$$\forall x (x=2 \rightarrow x=4)$$
+
+At the other extreme from universal quantification is existential
+quantification:
+
+\begin{definition}{Existential Quantification}
+  $p(x)$ is true for at least one value of $x$, noted with $\exists$.
+\end{definition}
+
+$\exists x (x^2=4 \rightarrow x=2)$ can then be read as ``There exists an x
+such that $x^2=4$ implies $x=2$'', or as ``There is an $x$ for which $x^2=4$
+implies $x=2$.
+
+For example: $\exists x (x^2-x \geq 0$ is false if the universe consists of all reals, true if the universe exists of integers. 
+
+For example, $U={1,3,5,7}$: $\forall x (x^2 < 10x)$ is true (and can be written
+as $1^2 < 10 \cdot 1 \land 3^2 < 10 \cdot 3 \land \ldots)$, as is
+$\exists x (x^2<4x)$, which can be written as $1^2 < 4 \cdot 1 \lor 3^2 < 4 \cdot
+3 \lor \ldots$. 
 
 \end{document}
