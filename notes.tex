@@ -263,5 +263,42 @@ For example, $U={1,3,5,7}$: $\forall x (x^2 < 10x)$ is true (and can be written
 as $1^2 < 10 \cdot 1 \land 3^2 < 10 \cdot 3 \land \ldots)$, as is
 $\exists x (x^2<4x)$, which can be written as $1^2 < 4 \cdot 1 \lor 3^2 < 4 \cdot
 3 \lor \ldots$. 
+ 
+\section*{2019-02-04}
+\subsection*{Review:}
+$x > 0$ is a not a proposition; instead, it is a propositional function. This
+means that for any x value we get an actual proposition; e.g. $P(5)$ is true,
+and $P(8)$ is false.
+
+Quantification: many types; we covered two (universal ($\forall$) and
+existential ($\exists$)). As an example, $\forall x \forall y ((x+y)^2 = x^2 + 2xy + y^2)$.
+
+\subsection*{New stuff:}
+
+$\forall x \exists y (x+y > 0)$: ``For every $x$ there is a $y$ for which $x+y>0$'', which is true. However, $\exists y \forall x (x+y>0)$: ``There is a $y$ so that for every $x$, $x+y > 0$'', which is false.
+
+Another quantification is the existence of a unique value, $\exists!$. For example, $\exists! x (x^3=8)$; ``There is a unique $x$ for which $x^3=8$'', which is true. However, $\exists! x ( x^2 = 4 )$ is false, as is $\exists! x ( x^2 = -4 )$.
+
+\begin{definition}{Increasing Function}
+  $\forall x \forall y ( y > x \rightarrow f(y) > f(x))$
+\end{definition}
+
+\begin{definition}{Bertram's Postulate}
+  (not actually a postulate?) -- There is always a prime between a number 
+  (positive integer greater than or equal to two)  and its double; that is,
+  $\forall n (n>2 \rightarrow \exists p (\text{p is prime} \land n<p<2n))$.
+\end{definition}
+
+``Ex: If an increasing continuous function starts negative and ends positive,
+then it must be zero somewhere in between.'' This can be written as
+$\forall f ([ f \text{is increasing} \land f \text{is continuous} \land
+\exists x_1 (f(x_1) < 0) \land \exists x_2 (f(x_2) > 0)] \rightarrow
+\exists c (x_1 < c < x_2 \land f(c) = 0))$
+
+\begin{definition}{Bound}
+  A variable that has been quantified is called bound.
+\end{definition}
+
+For example, in this propositional function of $x$: $\exists y (x + y > 0)$, $y$ is bound but not $x$. As such, values are added for $y$ such as $P(10): \exists y (10+y > 0)$, or $P(-100): \exists y (-100 + y > 0)$. 
 
 \end{document}
