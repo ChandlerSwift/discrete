@@ -299,6 +299,27 @@ $\forall f ([ f \text{is increasing} \land f \text{is continuous} \land
   A variable that has been quantified is called bound.
 \end{definition}
 
-For example, in this propositional function of $x$: $\exists y (x + y > 0)$, $y$ is bound but not $x$. As such, values are added for $y$ such as $P(10): \exists y (10+y > 0)$, or $P(-100): \exists y (-100 + y > 0)$. 
+For example, in this propositional function of $x$: $\exists y (x + y > 0)$,
+$y$ is bound but not $x$. As such, values are added for $y$ such as
+$P(10): \exists y (10+y > 0)$, or $P(-100): \exists y (-100 + y > 0)$. 
+
+\section*{2019-02-05}
+
+\subsection*{Goldbach's Conjecture}
+
+\begin{definition}{Goldbach's Conjecture}
+  Every even number 4 or larger is the sum of two primes; that is,
+  $\forall n ( ( n \text{ is even } \land n \geq 4 ) \rightarrow 
+  \exists p \exists q ( p \text{ is prime } \land q \text{ is prime }
+  \land n = p + q ) )$
+\end{definition}
+
+\begin{definition}{The Mean Value Theorem}
+  If $f(x)$ is continous on $[a,b]$ and differentiable on $(a,b)$ then for
+  some $c$ with $a<c<b$, $$f'(c) = \frac{f(b)-f(a)}{b-a}$$
+  That is, $\forall f \forall a \forall b ([a < b \land f \text{ is
+  continuous on } [a,b] \land f \text{ is differentiable on } (a,b)] \to
+  \exists c (a < c < b \land f'(c) = \frac{f(b)-f(a)}{b-a}) )$.
+\end{definition}
 
 \end{document}
