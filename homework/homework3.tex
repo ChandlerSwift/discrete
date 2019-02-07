@@ -1,0 +1,117 @@
+\documentclass{article}
+
+\title{Homework 3}
+\author{Chandler Swift}
+
+\begin{document}
+\maketitle
+\textbf{Section 1.4}
+\begin{itemize}
+  \item[12]
+    \begin{itemize}
+      \item[a] True
+      \item[b] True
+      \item[c] False
+      \item[d] True
+      \item[e] False
+      \item[f] True
+      \item[g] False
+    \end{itemize}
+  \item[24]
+    Let $C(x)$ be the propositional function ``$x$ is in your class''.
+    \begin{itemize}
+      \item[a] $\forall x (P(x))$ and $\forall x (C(x) \to P(x))$, where
+        $P(x)$ is the propositional function that a student has a phone.
+      \item[b] $\exists x (F(x))$ and $\exists x (C(x) \land (F(X))$, where
+        $F(x)$ is the propositional function that a student has seen a foreign
+        movie.
+      \item[c] $\exists x (\neg S(x))$ and $\exists x (C(x) \land \neg S(x))$,
+        where $S(x)$ is the propositional function that a student can swim.
+      \item[d] $\forall x (Q(x))$ and $\forall x (C(x) \to Q(x))$, where
+        $Q(x)$ is the propositional function that a student can solve a
+        quadratic equation.
+      \item[e] $\exists x (\neg R(x))$ and $\exists x (C(x) \land \neg R(x))$,
+        where $R(x)$ is the propositional function that a student wants to be
+        rich.
+    \end{itemize}
+  \item[32]
+    \begin{itemize}
+      \item[a] With the domain of dogs, and $F(x)$ representing the propositional
+        function that a dog has fleas, the original is $\forall d (F(d))$. Negation
+        is $\exists d (\neg F(d))$, or ``Some dogs do not have fleas''.
+      \item[b] With the domain of horses, and $A(x)$ representing that $x$ can add,
+        the original is $\exists h (A(h))$. The negation is $\forall h (\neg A(h))$,
+        or, in English, ``No horse can add''.
+      \item[c] With the domain of koalas, and $C(x)$ being the propositional
+        function of climbing ability, the original is $\forall k (C(k))$. The
+        negation is $\exists k (\neg C(k))$, or ``Some koalas cannot climb''.
+      \item[d] With the domain of monkeys, and $F(x)$ being ability to speak
+        French, $\forall m (\neg F(m))$. The negation is $\exists m (F(m))$, or
+        ``Some monkeys can speak French''.
+      \item[e] With the domain of pigs, and $S(x)$ being ability to swim and
+        $F(x)$ being the ability to catch fish, $\exists p (S(p) \land F(p))$.
+        Negation: $\forall p \neg(S(p) \land F(p))$; that is, ``No pig can both
+        swim and catch fish''.
+    \end{itemize}
+  \item[36]
+    \begin{itemize}
+      \item[b] $\exists x (x < 0 \lor x \geq 5)$
+      \item[c] $\forall x (x < -1 \lor x > 1)$
+    \end{itemize}
+  \item[54]
+    \begin{itemize}
+      \item[a] False
+      \item[b] False
+      \item[c] True
+      \item[d] False
+    \end{itemize}
+\end{itemize}
+\textbf{Section 1.5}
+\begin{itemize}
+  \item[16]
+    If $C(x)$ represents a student being in the class, and
+    $F(x),Sop(x),J(x),Sen(x)$ represent being a freshman, sophomore, junior, and
+    $CS(x),M(x)$ represent Computer Science and Mathematics majors respectively,
+    with the domain of all people:
+    \begin{itemize}
+      \item[a] $\exists s (C(s) \land J(s))$: True
+      \item[b] $\forall s (C(s) \to CS(s))$: False
+      \item[c] $\exists s (C(s) \land \neg M(s) \land \neg J(s))$: True
+      \item[d] $\forall s (C(s) \to (Sop(s) \lor CS(s)))$: False
+      \item[e] With the domain of majors, students, and year:
+        $\exists m (\forall y ( \exists s(y(s) \land m(s))))$: False
+    \end{itemize}
+  \item[20]
+    \begin{itemize}
+      \item[a] $\forall x \forall y ((y < 0 \land x < 0) \to x * y > 0)$
+      \item[b] $\forall x \forall y ((x > 0 \land y > 0) \to \frac{x+y}{2}>0)$
+      \item[c] $\exists x \exists y ((x < 0 \land y < 0) \to \neg (x-y < 0))$
+      \item[d] $\forall x \forall y ( \neg (|x+y| > |x| + |y|))$
+    \end{itemize}
+  \item[28]
+    \begin{itemize}
+      \item[a] True
+      \item[b] False
+      \item[c] True
+      \item[d] False
+      \item[e] True
+      \item[f] False
+      \item[g] True
+      \item[h] False
+      \item[i] False
+      \item[j] True
+    \end{itemize}
+  \item[30]
+    \begin{itemize}
+      \item[c] $\forall y(\neg Q(y) \lor \exists x(R(x,y))$
+      \item[d] $\forall y(\forall x \neg R(x,y) \land \exists x \neg S(x,y))$
+    \end{itemize}
+  \item[40]
+    \begin{itemize}
+      \item[a] $x \neq 1$
+      \item[b] $x < -100$
+      \item[c] $x = y = 1$ or $x = y = 0$
+    \end{itemize}
+\end{itemize}
+
+\end{document}
