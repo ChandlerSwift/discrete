@@ -334,4 +334,74 @@ $P(10): \exists y (10+y > 0)$, or $P(-100): \exists y (-100 + y > 0)$.
   A type of theorem that is a direct application of another theorem.
 \end{definition}
 
+\section*{2019-02-11}
+\subsection*{Proof Techniques}
+\begin{enumerate}
+  \item Direct Proof: Assume $P(x)$ is true; show $Q(x)$ must be true.
+  \item Indirect Proof: Anything Else
+    \begin{enumerate}
+      \item Contraposition: A Direct proof that $\neg Q(x) \to \neg P(x)$
+      \item
+    \end{enumerate}
+\end{enumerate}
+
+For statement $P \to Q$:
+\begin{itemize}
+  \item The converse is $Q \to P$
+  \item The contrapositive is $\neg Q \to \neg P$
+  \item The inverse is $\neg P \to \neg Q$, which is equivalent to the
+    converse (It is the contrapositive of the converse)
+\end{itemize}
+
+\subsection*{Examples}
+
+If $n$ is even, then $9n-5$ is odd:
+\begin{proof}
+  Suppose $n$ is even, say $n-2k$ for some integer $k$. Then
+  \begin{align*}
+    9n-5 &= 9\times2k -5\\
+    &= 18k-5\\
+    &= 2(9k-3) + 1
+  \end{align*}
+  and so $9n-5$ is odd.
+\end{proof}
+
+If $9n-5$ is odd, then $n$ is even. (This fails to work directly)
+\begin{proof}
+  If $n$ is odd, then $n=2m+1$ for some integer $m$. Now $9n-5=9(2m-1)-5=18m+4=2(9m+2)$, which is even.
+  So $9n-5$ is even.
+\end{proof}
+
+If $x \cdot y > 100$ then $x > 10$ or $y > 10$:
+Can't be proven---this isn't true!
+
+Fixed version: If $x, y$ are positive and $x \cdot y > 100$, then $x > 10$ or
+$y > 10$.
+
+Quantified: $\forall x \forall y ( ( x > 0 \land y > 0 \land x \cdot y > 100 )
+\to ( x > 10 \lor y > 10)$
+
+Contrapositive: $\forall x \forall y ( ( x \leq 10 \land y \leq 10 ) \to
+( x \leq 0 \lor y \leq 0 \lor x \cdot y \leq 100) ) $
+
+Aside: $p \to q \equiv (p \land \neg q) \to F$.
+
+\begin{proof}
+\end{proof}
+
+If $x+y > 100$ then $x > 50$ or $y > 50$:
+\begin{proof}
+  By way of contraposition: Suppose $x \leq 50$ and $y \leq 50$. Then
+  $x + y \leq 50 + 50 = 100$, the negation of $x+y > 100$.
+\end{proof}
+
+If the square of an integer is even, then the integer is even.
+\begin{proof}
+  By way of contraposition: 
+  Suppose
+\end{proof}
+
+Anything you can prove directly or by contraposition, you can prove by
+contradiction.
+
 \end{document}
