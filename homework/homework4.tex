@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\title{Homework 4}
+\author{Chandler Swift}
+\date{February 13, 2019}
+\usepackage{amsthm}
+
+\begin{document}
+\maketitle
+\begin{itemize}
+  \item[10] Use a direct proof to show that the product of two rational numbers
+    is rational.
+    \begin{proof}
+      Assume $x$ and $y$ are rational numbers. Then there exist integers
+      $h$, $j$, $k$, and $l$ such that $x=\frac{h}{j}$ and $y=\frac{k}{l}$.
+      The product of $x$ and $y$ can then be written as
+      $x \cdot y = \frac{h}{j} \cdot \frac{k}{l} = \frac{h \cdot k}{j \cdot l}$,
+      which is rational.
+    \end{proof}
+  \item[12] Prove or disprove that the product of a nonzero rational number and
+    an irrational number is irrational.\\
+    The product is irrational. A proof by contradiction:
+    \begin{proof}
+      Suppose that a rational number $x$ and an irrational number $y$ multiply
+      to give us a rational number $z$. Then $x$ can be represented as the
+      fraction $\frac{h}{j}$ and $z$ as the fraction $\frac{k}{l}$, with
+      $h,j,k,l$ being integers, such that $\frac{h}{j}\cdot y = \frac{k}{l}$.
+      Dividing, we have $y = \frac{(\frac{k}{l})}{(\frac{h}{j})} = \frac{kj}{hl}$.
+      Since $y$ is represented as the ratio of two integers, it is rational---a
+      contradiction! Therefore the product must be irrational.
+    \end{proof}
+  \item[16] Prove that if $x$, $y$, and $z$ are integers and $x+y+z$ is odd,
+    then at least one of $x$, $y$, and $z$ is odd.
+    \begin{proof}
+      A proof by contradiction: Suppose that $x, y, z$ are even integers. Then
+      there exists integers $p,q,r$ such that $x=2p$, $y=2q$, and $z=2r$. The
+      sum of these numbers is $x+y+z=2p+2q+2r=2(p+q+r)$, and so p+q+r is
+      even---a contradiction! Thus at least one of $x$, $y$, and $z$ must be
+      odd.
+    \end{proof}
+  \item[18] Prove that if $m$ and $n$ are integers and $mn$ is even, then $m$
+    is even or $n$ is even.
+    \begin{proof}
+      A proof by contradiction: Suppose that $m$ and $n$ are integers, $mn$ is
+      even, and neither $m$ nor $n$ is even (that is, both are odd). Then there
+      exist integers $x$ and $y$ such that $m=2x+1$ and $n=2y+1$. Then
+      $mn = (2x+1)(2y+1) = 4xy + 2x + 2y + 1 = 2(2xy + x + y) + 1$, and since
+      $2xy + x + y$ is an integer, the product is even---a contradiction! Thus,
+      at least one of $m$ or $n$ must be even.
+    \end{proof}
+  \item[28] Prove that if $n$ is a positive integer, then $n$ is even iff
+    $7n+4$ is even. 
+    \begin{proof}
+      In the forward direction, if $n$ is even, then there exists an integer
+      $k$ such that $n=2k$. We can write $7n+4$ as $7(2k)+4=14k+4=2(7k+2)$,
+      which is even.
+
+      In the other direction, if $7n+4$ is even, then there exists an integer
+      $k$ such that $7n+4=2k$. Because $7n=2k-4=2(k-2)$, $7n$ is also even.
+      By problem 18, since $7n$ is even, then either 7 or $n$ must be even.
+      Since 7 is not even (it is odd, as $7=2\cdot3+1$), the $n$ must be the
+      even multiplicand.
+    \end{proof}
+\end{itemize}
+
+\end{document}
