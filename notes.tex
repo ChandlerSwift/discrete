@@ -1,7 +1,9 @@
+
 \documentclass{article}
 
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
@@ -428,5 +430,69 @@ $\{1,8,B,q,\{1,B,C\}\}$.
 
 We say 8 is an \textbf{element} or a \textbf{member} of the set.
 
-Commonly, $S,T,A,B,C$ are sets; $8 \in S$, $8 \notin T$.
+Commonly , $S,T,A,B,C$ are sets; $8 \in S$, $8 \notin T$.
+
+\section*{2019-02-19}
+A \textbf{set} is an unordered collection of ``things'', the elements of the set.
+
+$\{1,2,3\}=\{3,1,2\}=\{1,1,1,2,2,3\}$ -- Order doesn't matter; repetition is
+ignored.
+
+$\{1,2,3,4,5,6,7,8,9,10\} = \{x | x \text{ is an integer } \land x \geq 1 \land
+x \leq 10 \}$ (``Set constructor notation'')
+
+$S={x|P(x)}$ means $S$ is the set of all x for which the propositional function
+$P(x)$ is true.
+
+$S=T$ means that $\forall x (x \in S \leftrightarrow x \in T)$ is true.
+
+\subsection*{Special Sets}
+
+$\mathbb{Z}$: The set of all integers
+
+$\mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\}$
+
+$\mathbb{Q}$: The set of rational numbers
+
+$\mathbb{Q} = \{ \frac{m}{n} | m,n \in \mathbb{Z} \land n \neq 0 \}$
+
+$\mathbb{R}$: The Reals
+
+$\mathbb{C}$: The Complex
+
+$\mathbb{C}= \{ x + iy | x,y \in \mathbb{R} \}$
+
+$\mathbb{N}$: Natural Numbers
+
+$\mathbb{N}=\{0,1,2,3,\dots\}$
+
+$\mathbb{Z}^+ = \{1,2,3,\dots\}$
+
+\subsection*{Subsets and other sets}
+
+$S$ is a subset of $T$, denoted $S \subset T$, means that 
+$\forall x (x \in S \to x \in T)$ is true. 
+
+$\mathbb{Z}^+ \subset \mathbb{N} \subset \mathbb{Z} \subset
+\mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$
+
+The empty set, $\emptyset = \{\}$ has no elements, and is a subset of every set.
+
+Every set is also a subset of itself. 
+
+NOTE: $\{0\} \neq \emptyset = \{\}$, and $\{\emptyset\} \neq \emptyset$.
+
+$|\{0, \{\emptyset\}, \emptyset \}| = 3$ (``The cardinality is three.'')
+
+$P(S)$ is the \textbf{Power Set} of $S$, the set of all subsets of $S$.
+
+For example, if $S=\{1,2\}$, then $P(S)=\{\emptyset, \{1\}, \{2\}, \{1,2\}\}$.
+
+The magnitude of a power set $|P(S)| = 2^{|S|}$.
+
+What can be in a set? Is ``The set of all sets'' a valid set? It contains
+itself, by definition\dots.
+
+
+
 \end{document}
