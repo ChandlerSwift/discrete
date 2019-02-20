@@ -495,4 +495,72 @@ itself, by definition\dots.
 
 
 
+\section*{2019-02-20}
+
+\subsection*{Tuples}
+
+An ordered $n$-tuple is an expression like $(a_1, a_2, \dots, a_n)$ where both
+order and repetition matter.
+
+An example would be an ordered pair: $(5,8)$ or $(3,3)$. 
+
+$A \times B$ (``$A$ cross $B$''), the cartesian product of $A$ and $B$ is
+$\{ (x,y) | x \in A \land y \in B\}$.
+
+Ex: $\{1,2\}\times\{3,4\}=\{(1,2),(1,3),(1,4),(2,2),(2,3),(2,4)\}$
+
+The $xy$-plane is $\mathbb{R}\times\mathbb{R}$.
+
+$|A \times B| = |A| \cdot |B|$.
+
+The \textbf{union} of two sets
+$A \cup B = \{ x | x \in A \lor x \in B \}$.
+
+The \textbf{intersection} of two sets
+$A \cap B = \{ x | x \in A \land x \in B \}$.
+
+The \textbf{symmetric difference} of two sets
+$A \oplus B = \{ x | x \in A \oplus x \in B \}$.
+
+The \textbf{set difference} of two sets
+$A - B = \{x | x \in A \land x \notin B \}$.
+
+$A \oplus B = (A-B)\cup(B-A)$
+
+The \textbf{complement} of a set
+$\bar{A}=\{x|x \notin A\}$.
+
+\subsection*{Set Identities}
+
+Commutative Laws:\\
+$A \cup B = B \cup A$\\
+$A \cap B = B \cap A$\\
+
+Identity Laws:\\
+$A \cup \emptyset = A$\\
+$A \cap U = A$\\
+
+Domination Laws:\\
+$A \cap \emptyset = \emptyset$ \\
+$A \cup U = U$\\
+
+Idempotent Laws:\\
+$A \cup A = A$\\
+$A \cap A = A$\\
+
+Associative Laws:\\
+$A \cup (B \cup C) = (A \cup B) \cup C$\\
+$A \cap (B \cap C) = (A \cap B) \cap C$\\
+
+Distributive Laws:\\
+$A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$\\
+$A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$\\
+
+Double Complement Law:\\
+$\bar{(\bar{A})}=A$\\
+
+De Morgan's Laws:\\
+$\bar{A \cup B} = \bar{A} \cap \bar{B}$\\
+$\bar{A \cap B} = \bar{A} \cup \bar{B}$\\
+
 \end{document}
