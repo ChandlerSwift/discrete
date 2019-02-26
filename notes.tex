@@ -563,4 +563,60 @@ De Morgan's Laws:\\
 $\bar{A \cup B} = \bar{A} \cap \bar{B}$\\
 $\bar{A \cap B} = \bar{A} \cup \bar{B}$\\
 
+\section*{2019-02-26}
+
+If $A \oplus B = A \oplus C$, does B have to equal C (symmetric difference)? (yes)
+If $A \times B = A \times C$, does B have to equal C? (no -- A could be the 
+empty set, for which $A \times B = A \times C = \emptyset$ for any sets $B,C$.)\\
+
+Proof by truth table: For all rows where $A \oplus B = A \oplus C$, $B=C$.
+
+\begin{tabular}{ c|c|c|c|c }
+  $A$ & $B$ & $C$ & $A \oplus B$ & $A \oplus C$\\
+  \hline
+  1 & 1 & 1 & 0 & 0\\
+  1 & 1 & 0 & 0 & 1\\
+  1 & 0 & 1 & 1 & 0\\
+  1 & 0 & 0 & 1 & 1\\
+  \hline
+  0 & 1 & 1 & 1 & 1\\
+  0 & 1 & 0 & 1 & 0\\
+  0 & 0 & 1 & 0 & 1\\
+  0 & 0 & 0 & 0 & 0
+\end{tabular}\\
+
+\begin{proof}
+  Let $x \in B$. If $x \in A \oplus B$ then $x \notin A$. Since $A \oplus B =
+  A \oplus C$, $x \in A \oplus C$. Since $x \notin A$, $x \in C$. If $x \notin
+  A \oplus B$ but $x \in B$ then $x \in A$. Again, $x \notin A \oplus B =\
+  A \oplus C$, so $x \in A$, $x \notin A \oplus C$. Hence, again, $x \in C$.
+  Consequently, $B \subset C$. By symmetry, $C \subset B$, so $B=C$.
+\end{proof}
+
+If $A \neq \emptyset$ and $A \times B = A \times C$, then $B=C$.
+\begin{proof}
+  Let $x \in B$. Since $A \neq \emptyset$, there is some element $a \in A$.
+  Now $(a,x) \in A \times B$, but $A \times B = A \times C$ so
+  $(a,x) \in A \times C$ as well. Hence $x \in C$. So $B \subset C$.
+  By symmetry, $C \subset B$, so $B = C$.
+\end{proof}
+
+\subsection*{2.3. Functions}
+
+Given two sets $A$ and $B$, a \textbf{function} $f: A \to B$ is an assignment
+of a unique element of $B$ to each element of $A$.
+
+$A$ is called the \textbf{domain} of $f$.
+
+$B$ is the \textbf{codomain} (\textit{not} the range!).
+
+The \textbf{range} $\{f(x) | x \in A\}$. For example, the $\sin$ function
+has a domain of the reals, the codomain of the reals, and the range $[0,1]$.
+
+Unlike algebra, $f(x)=\sqrt{x}$ is not a function from $\mathbb{R}$ to
+$\mathbb{R}$, since not every value in the domain has a corresponding value
+in the codomain, and values that \textit{are} defined in the codomain have
+two values. Similarly, $g(x) = \frac{x}{x+1}$ is not a function from
+$\mathbb{R}$ to $\mathbb{R}$, since we can't divide by zero when $x=-1$.
+
 \end{document}
