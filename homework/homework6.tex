@@ -1,0 +1,77 @@
+\documentclass{article} 
+
+\title{Homework 6}
+\author{Chandler Swift}
+\date{February 28, 2019}
+\usepackage{amsthm}
+\usepackage{seqsplit}
+
+\begin{document}
+\maketitle
+\begin{itemize}
+    % 2.1 20, 24, 28, 40
+    % 2.2 14, 26, 32, 44b, 46
+  \item[20] Find two sets $A$ and $B$ such that $A \in B$ and $A \subset B$.\\
+    $A = \emptyset$, $B = \{ \emptyset \}$
+  \item[24] Can you conclude that $A=B$ if $A$ and $B$ are two sets with
+    the same power set? \\
+    Yes. 
+  \item[28] Show that if $A \subset C$ and $B \subset D$ then $A \times B \subset C \times D$.
+    \begin{proof}
+      Let $x \in A$ and $y \in B$. (If either $A$ or $B$ is empty, then their
+      cartesian product is the empty set, which is trivially a subset of $C \times D$.)
+      Then $(x,y)$ is in $A \times B$. Also, because $A \subset C$ and $B \subset D$, 
+      we know that $x \in C$ and $y \in D$, and so $(x,y) \in C \times D$.
+    \end{proof}
+  \item[40] Show that $A \times B \neq B \times A$ when $A$ and $B$ are non empty and not equal.
+    \begin{proof}
+      Suppose $A$ and $B$ are non-empty inequal sets. Since $A$ and $B$ are not
+      equal, one must contain an element the other does not. Without loss of
+      generality, assume that $A$ contains an element $x$ that $B$ does not. So
+      for any element $y \in B$, the cartesian product $A \times B$ contains
+      $(x,y)$, whereas because $x$ is not in $B$, the cartesian product
+      $B \times A$ does not contain $(x,y)$. 
+    \end{proof}
+
+    \hrulefill
+
+  \item[14] Find the sets $A$ and $B$ if $A-B = \{1,5,7,8\}, B-A=\{2,10\}$, and
+    $A \cap B = \{3,6,9\}$.\\
+    $A=\{1,3,5,6,7,8,9\}$, $B=\{2,3,6,9,10\}$
+  \item[26] Let $A$, $B$, and $C$ be sets. Show that $(A-B)-C=(A-C)-(B-C)$.
+    \begin{proof}
+
+    \end{proof}
+  \item[32] Can you conclude that $A=B$ if $A$, $B$, and $C$ are sets such that
+    \begin{itemize}
+      \item[a] $A \cup C = B \cup C$?\\
+        No.
+      \item[b] $A \cap C = B \cap C$?\\
+        No.
+      \item[c] $A \cup C = B \cup C$ and $A \cap C = B \cap C$?\\
+        Yes.
+    \end{itemize}
+  \item[44b] Show that if $A$ and $B$ are sets, then $(A \oplus B) \oplus B = A$.
+    \begin{proof}
+      Suppose that $A$ and $B$ are sets, and $x$ is an element.
+
+      \begin{tabular}{ c|c|c|c|c }
+        $x \in A$ & $x \in B$ & $x \in A \oplus B$ & $x \in (A \oplus B) \oplus B$ &
+        $x \in A = x \in (A \oplus B) \oplus B$.\\
+        \hline
+        1 & 1 & 0 & 1 & 1\\
+        1 & 0 & 1 & 1 & 1\\
+        0 & 1 & 1 & 0 & 1\\
+        0 & 0 & 0 & 0 & 1\\
+      \end{tabular}\\
+
+      In all cases, $x \in A = x \in (A \oplus B) \oplus B$, so $(A \oplus B) \oplus B = A$.
+
+    \end{proof}
+  \item[46] Determine whether the symmetric difference is associative; that is,
+    if $A$, $B$, and $C$ are sets, does it follow that
+    $A \oplus (B \oplus C) = (A \oplus B) \oplus C$?\\
+    Yes, the symmetric difference is associative.
+\end{itemize}
+
+\end{document}
