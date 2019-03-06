@@ -1,0 +1,121 @@
+\documentclass{article} 
+
+\title{Homework 7}
+\author{Chandler Swift}
+\date{March 7, 2019}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    % 2.3: 12, 20, 22b, c, 30, 36, 42, 76. For extra credit, do problem 46
+  \item[12] Determine whether each of these functions from $\mathbb{Z}$ to
+    $\mathbb{Z}$ is one-to-one:
+    \begin{enumerate}
+      \item $f(n) = n-1$ is one-to-one:
+        \begin{proof}
+          Let $a,b \in \mathbb{Z}$, where $f(a) = f(b)$. Since $f(a)=f(b)$,
+          $a-1=b-1$. Adding 1 to both sides, $a=b$, so the elements are the
+          same, and the sets are one-to-one.
+        \end{proof}
+      \item $f(n) = n^2 + 1$ is not one-to-one, as both $f(1)=f(-1)=2$.
+      \item $f(n) = n^3$ is one-to-one:
+        \begin{proof}
+          Let $a,b \in \mathbb{Z}$, where $f(a) = f(b)$. Since $f(a)=f(b)$,
+          $a^3=b^3$. Taking the cube root of each side, $a=b$, so the elements
+          are the same, and therefore the sets are one-to-one.
+        \end{proof}
+      \item $f(n) = \lceil n/2 \rceil$ is not one-to-one, as $f(1) = f(2) = 1$.
+    \end{enumerate}
+  \item[20] Give an example of a function from $\mathbb{N}$ to $\mathbb{N}$
+    which is
+    \begin{enumerate}
+      \item one-to-one but not onto: $f(n)=n^2$
+      \item onto but not one-to-one: $f(n)=\lceil n/2 \rceil$
+      \item both onto and one-to-one (but diff erent from the identity function):\\
+        $f(n)=\begin{cases}
+            f(n) = n+1 & n \text{ is even}\\
+            f(n) = n-1 & n \text{ is odd}
+          \end{cases}$
+      \item neither one-to-one nor onto: $f(n)=0$
+      \end{enumerate}
+    \item[22b] Determine whether $f(x) = -3x^2 + 7$ is a bijection from
+      $\mathbb{R}$ to $\mathbb{R}$.\\
+      This function is not a bijection, as $f(1)=f(-1)=4$.
+    \item[22c] Determine whether $f(x)=(x+1)/(x+2)$ is a bijection from
+      $\mathbb{R}$ to $\mathbb{R}$. \\
+      This is not a function as $f(-2)$ is undefined, which means it is
+      also not a bijection. Additionally, there is no $x \in \mathbb{R}$
+      such that $f(x) = \frac{1}{2}$.
+    \item[30] Let $S = \{-1,0,2,4,7\}$. Find $f(S)$ if
+      \begin{enumerate}
+        \item $f(x) = 1$: $\{1,1,1,1,1\} = \{ 1 \}$
+        \item $f(x) = 2x + 1$: $\{-1,1,5,9,15\}$
+        \item $f(x) = \lceil x / 5 \rceil$: $\{0,0,1,1,2\} = \{ 0,1,2 \}$
+        \item $f(x) = \lfloor (x^2 + 1) / 3 \rfloor$: $\{ 0,0,1,5,16 \} = \{0,1,5,16\}$
+      \end{enumerate}
+    \item[36] If $f$ and $f \circ g$ are one-to-one, does it follow that $g$ is one-to-one? Justify your answer.\\
+      Yes (assuming both have the same domain and codomain)
+      \begin{proof}
+        %Let $x,y$ in the domain of $f$ and $g$, where
+        %$(f \circ g)(x) = (f \circ g)(y)$. Because $f \circ g$ is one-to-one,
+        %then $x = y$. 
+        Suppose $g$ is not one-to-one. Then there exists some $x,y$ where 
+        $x \neq y$ in the domain of $g$ where $g(x)=(g)y$. Because functions
+        produce equal output for equal input, since $g(x)=g(y)$, then
+        $f(g(x))=f(g(y))$, despite $x \neq y$. But we said $f \circ g$ is
+        one-to-one: a contradiction! Therefore $g$ must be one-to-one.
+      \end{proof}
+    \item[42] Let $f$ be a function from the set $A$ to the set $B$. Let $S$
+      and $T$ be subsets of $A$. Show that
+      \begin{enumerate}
+        \item $f(S \cup T) = f(S) \cup f(T)$
+          % Not possible to do with membership table
+          % $ f(S) = \{ f(s) | s \in S \} $
+          % Logical Equivalences on set-constructor: no
+          % C = D if C \subset D and D \subset C
+          %  * to show this, given x \in C, show x \in D.
+          \begin{proof}
+            % Show tht f(S) \cup f(T) \subset f(S \cup T)
+            Let $x \in f(S) \cup f(T)$. Since  $x \in f(S \cup T)$, then either
+            $x \in f(S)$ or $x \in f(T)$. If $x \in f(S)$, then there exists some
+            $y$ in $A$ such that $f(y)=x$. Since $y \in S \cup T$, either $y \in S$
+            or $y \in T$, so $y \in S \cup T$, and then $f(y) \in f(S \cup T)$.
+            Thus, $f(S) \cup f(T) \subset f(S \cup T)$.
+
+            Similarly, let $x \in f(S \cup T)$. So there exists some $y \in A$
+            such that $f(y) = x$, so $y$ is in $S \cup T$. This means that either
+            $y \in S$ or $y \in T$, so $f(y) \in f(S)$ or $f(y) in f(T)$. 
+            Thus, $f(S \cup T) \subset f(S) \cup f(T)$.
+
+            Since both are subsets of the other, $f(S \cup T) = f(S) \cup f(T)$.
+          \end{proof}
+        \item $F(S \cap T) \subset f(S) \cap f(T)$
+          \begin{proof}
+            Let $x \in f(S \cap T)$. Then $\exists y \in A$ such that
+            $f(y)=x$. So $y \in S \cap T$, meaning that $y \in S$ and
+            $y \in T$. Then $f(y) \in f(S) \land f(y) \in f(T)$, making
+            $F(S \cap T) \subset f(S) \cap f(T)$.
+          \end{proof}
+      \end{enumerate}
+    \item[76] Prove or disprove each of these statements:
+      \begin{enumerate}
+        \item True
+          \begin{proof}
+            Let the integer $n$ be the ceiling of $x$. Since $n$ is an integer,
+            the floor of $n$ is $n = \lceil x \rceil$.
+          \end{proof}
+        \item False: $x=y=1.5$
+        \item True
+          \begin{proof}
+            Let the ceiling of $x/4$ be $n$, so $n-1 < x/4 \leq n$, and
+            $2n-2 < 2/x \leq 2n$. 
+          \end{proof}
+        \item False: $x=3.5$
+        \item True
+      \end{enumerate}
+\end{enumerate}
+
+\end{document}
