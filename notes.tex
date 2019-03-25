@@ -647,5 +647,24 @@ A function that is both injective and surjective is called \textbf{bijective}.
 
 A sequence is a function from the natural numbers to some set $A$: $f: \mathbb{N} \to A$.
 
+\section*{2019-03-25}
 
+\subsection*{Mathematical Induction}
+$p(1) \land \forall n (p(n) \to p(n+1)) \equiv \forall n (p(n))$
+
+That is, to show that $p(n)$ is true for all positive integers $n$, show that
+it starts true, and show that whenever it is true for one integer, it must also
+be true for the next.
+
+For example: $(\sqrt{2} - 1)^n = a\sqrt{2} + b$ for some integers $a,b$.
+
+\begin{proof} by way of mathematical induction:\\
+  When $n=1$, $(\sqrt{2} - 1)^n=\sqrt{2}-1$, so $a=1, b=-1$ works.
+  Now suppose $(\sqrt{2}-1)^n = a\sqrt{2} + b$ for some $n$ and some integers $a,b$.
+  Then $(\sqrt{2} - 1)^{n+1} = (\sqrt{2}-1)^n(\sqrt{2}-1)=(a\sqrt{2}+b)(\sqrt{2}-1)=
+  2a+b\sqrt{2}-a\sqrt{2}-b=(b-a)\sqrt{2}+(2a-b)=A\sqrt{2}+B$ for integers A,B.
+
+  Since the $(n+1)$ case followed from the $n$th case, by the principle of
+  mathematical induction, $(\sqrt{2}-1)^n=a\sqrt{2}+b$ for some integers $a,b$.
+\end{proof}
 \end{document}
