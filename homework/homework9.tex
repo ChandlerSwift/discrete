@@ -1,0 +1,136 @@
+\documentclass{article} 
+
+\title{Homework 9}
+\author{Chandler Swift}
+\date{March 27, 2019}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    % 5.1: 4, 6, 10, 12, 20, 28, 32
+  \item[4] Let $p(n)$ be the statement $1^3 + 2^3 + \dots + n^3 = (n(n + 1)/2)^2$
+    for the positive integer $n$.
+    \begin{enumerate}
+      \item $P(1)$ says that $1^3 = (1(1+1)/2)^2$.
+      \item $(1(1+1)/2)^2 = (1(1))^2 = 1 = 1^3$.
+      \item $P(n)$ is true for some positive integer $n$.
+      \item If $P(n)$ is true, then $P(n+1)$ is true.
+      \item Suppose $1^3 + 2^3 + \dots + n^3 = (n(n + 1)/2)^2$ (inductive
+        hypothesis). Then 
+        \begin{align*}
+          1^3 + 2^3 + \dots + n^3 + (n+1)^3
+          &= (n(n + 1)/2)^2 + (n+1)^3 \\
+          &= (\frac{1}{2}n^2 + \frac{1}{2}n)^2 + (n^3 + 3n^2 + 3n + 1)\\
+          &= \frac{1}{4}n^4 + \frac{1}{2}n^3 + \frac{1}{4}n^2 + n^3+3n^2+3n+1\\
+          &= \frac{1}{4}n^4 + \frac{3}{2}n^3 + \frac{13}{4}n^2 + 3n + 1\\
+          &= (\frac{1}{2}n^2 + \frac{3}{2}n + 1)^2 \\
+          &= ((n+1)(n+2)/2)^2 \\
+          &= ((n+1)((n+1)+1)/2)^2
+        \end{align*}
+        and so $P(n+1)$ is true.
+      \item Since we have shown that the propositional function is true for
+        $n+1$ if it is true for $n$, and $P(1)$ has been shown to be true, we
+        can also say that $P(2)$ is true. Now this means that $P(3)$ is true,
+        which means that $P(4)$ is true, which can be repeated $n$ times to
+        demonstrate that $P(n)$ is true. 
+    \end{enumerate}
+  \item[6]
+    % \begin{proof} by way of mathematical induction:\\
+    %   When $n=1$, $(\sqrt{2} - 1)^n=\sqrt{2}-1$, so $a=1, b=-1$ works.
+    %   Now suppose $(\sqrt{2}-1)^n = a\sqrt{2} + b$ for some $n$ and some integers $a,b$.
+    %   Then $(\sqrt{2} - 1)^{n+1} = (\sqrt{2}-1)^n(\sqrt{2}-1)=(a\sqrt{2}+b)(\sqrt{2}-1)=
+    %   2a+b\sqrt{2}-a\sqrt{2}-b=(b-a)\sqrt{2}+(2a-b)=A\sqrt{2}+B$ for integers A,B.
+    % 
+    %   Since the $(n+1)$ case followed from the $n$th case, by the principle of
+    %   mathematical induction, $(\sqrt{2}-1)^n=a\sqrt{2}+b$ for some integers $a,b$.
+    % \end{proof}
+
+    \begin{proof} by way of mathematical induction:\\
+      When $n=1$, $1 \cdot 1! = 1 = (1+1)!-1$, which is true.
+
+      Now suppose that $1 \cdot 1! + 2 \cdot 2! + \dots + n \cdot n! = (n+1)! - 1$
+      for some $n$.
+      \begin{align*}
+        1 \cdot 1! + \dots + n \cdot n! + (n+1)(n+1)!
+        &= (n+1)! - 1 + (n+1)(n+1)!\\
+        &= 1(n+1)! + (n+1)(n+1)! - 1\\
+        &= (n+2)(n+1)! -1\\
+        &= (n+2)! - 1\\
+        &= ((n+1) + 1)! -1
+      \end{align*}
+
+      Since the $n+1$th case followed from the $n$th case, by the principle
+      of mathematical induction,
+      $1 \cdot 1! + 2 \cdot 2! + \dots + n \cdot n! = (n+1)! - 1$.
+    \end{proof}
+  \item[10] $f(n) = \frac{n}{n+q}$
+    \begin{proof} by way of mathematical induction:\\
+      In the base case, $n=1$, $\frac{1}{1\cdot2} = \frac{1}{2} = \frac{n}{n+1}$,
+      which is true.
+
+      Now suppose that $\frac{1}{1\cdot2} + \frac{1}{2\cdot3} + \dots +
+      \frac{1}{n(n+1)} = \frac{n}{n+1}$ for some $n$. 
+
+      \begin{align*}
+        \frac{1}{1\cdot2}+\dots+\frac{1}{n(n+1)}+\frac{1}{(n+1)(n+2)}
+        &= \frac{n}{n+1} + \frac{1}{(n+1)(n+2)}\\
+        &= \frac{n(n+2)+1}{(n+1)(n+2)}\\
+        &= \frac{n^2+2n+1}{(n+1)(n+2)}\\
+        &= \frac{(n+1)^2}{(n+1)(n+2)}\\
+        &= \frac{(n+1)}{(n+1) + 1}
+      \end{align*}
+      Since the $n+1$th case followed from the $n$th case, by the principle
+      of mathematical induction, $\frac{1}{1\cdot2} + \frac{1}{2\cdot3} + \dots +
+      \frac{1}{n(n+1)} = \frac{n}{n+1}$.
+    \end{proof}
+  \item[12] (attached)
+
+  \item[20]
+    \begin{proof} by way of mathematical induction:\\
+      In the base case, $n=7$, $3^7=2187 < 5040 = 7!$.
+
+      Now suppose that $3^n < n!$ for some $n > 6$. Then $3^{n+1} = 3 \cdot 3^n$
+      and $(n+1)! = (n+1)n!$. $3^n < n!$, so $3\cdot 3^n < (n+1)n!$ when $n+1>3$
+      which is given.
+
+      Since the $n+1$th case followed from the $n$th case, by the principle
+      of mathematical induction, $3^n < n!$ for $n > 6$.
+    \end{proof}
+  \item[28]
+    \begin{proof} by mathematical induction:\\
+      In the base case, where $n=3$, $n^2-7n+12 = 9-21+12 = 0$, which is
+      nonnegative.
+
+      Now suppose that $n^2-7n+12$ is nonnegative for some $n \geq 3$.
+      Since $n \geq 3$, $2n - 6 \geq 0$. Then $(n+1)^2 - 7(n+1) + 12 -
+      (n^2-7n+12) = 2n - 6 \geq 0$, so $(n+1)^2 - 7(n+1) + 12 \geq
+      n^2 -7n + 12)$. Because $f(n+1) \geq f(n)$ and $f(n) \geq 0$,
+      $f(n+1) \geq 0$.
+
+      Since the $n+1$th case followed from the $n$th case, by the principle
+      of mathematical induction, $n^2 - 7n + 12$ is nonnegative.
+    \end{proof}
+  \item[32]
+    \begin{proof} by way of mathematical induction:\\
+      In the base case, $n=1$, $n^3 + 2n = 3$, which is divisible by 3.
+
+      Now suppose that $n^3 + 2n$ is divisible by 3 for some positive int $n$.
+      Then $\exists k \in \mathbb{N} \in \text{ such that } 3k = n^3 + 2n$.
+      Then
+      \begin{align*}
+        (n+1)^3 + 2(n+1)
+        &= n^3 + 3N^2 + 3n + 1 +2n + 2\\
+        &= n^3 + 2n + 3(n^2 + n + 1)\\
+        &= 3(k + n^2 + n + 1)
+      \end{align*}
+      which has a factor of 3.
+
+      Since the $n+1$th case followed from the $n$th case, by the principle
+      of mathematical induction, $n^3 + 2n$ is divisible by 3. 
+    \end{proof}
+\end{enumerate}
+
+\end{document}
