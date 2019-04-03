@@ -1,0 +1,121 @@
+\documentclass{article} 
+
+\title{Homework 10}
+\author{Chandler Swift}
+\date{April 2, 2019}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    % 5.1: 22, 24, 30, 36, 46
+
+%    \begin{proof} by way of mathematical induction:\\
+%      When $n=1$, $1 \cdot 1! = 1 = (1+1)!-1$, which is true.
+%
+%      Now suppose that $1 \cdot 1! + 2 \cdot 2! + \dots + n \cdot n! = (n+1)! - 1$
+%      for some $n$.
+%      \begin{align*}
+%        1 \cdot 1! + \dots + n \cdot n! + (n+1)(n+1)!
+%        &= (n+1)! - 1 + (n+1)(n+1)!\\
+%        &= 1(n+1)! + (n+1)(n+1)! - 1\\
+%        &= (n+2)(n+1)! -1\\
+%        &= (n+2)! - 1\\
+%        &= ((n+1) + 1)! -1
+%      \end{align*}
+%
+%      Since the $n+1$th case followed from the $n$th case, by the principle
+%      of mathematical induction,
+%      $1 \cdot 1! + 2 \cdot 2! + \dots + n \cdot n! = (n+1)! - 1$.
+%    \end{proof}
+
+  \item[22] Claim: $n^2 \leq n!$ for all $n$ except $n=2,3$.
+    \begin{proof}
+      When $n=0$, $n^2=0$ and $n!=1$, so $n^2 \leq n!$.\\
+      When $n=1$, $n^2=1$ and $n!=1$, so $n^2 \leq n!$.\\
+      When $n=2$, $n^2=4$ and $n!=2$, so $n^2 > n!$.\\
+      When $n=3$, $n^2=9$ and $n!=6$, so $n^2 > n!$.\\
+      When $n=4$, $n^2=16$ and $n!=24$, so $n^2 \leq n!$.\\
+      
+      Now suppose that $n^2 \leq n!$ for some $n>4$. \dots?
+    \end{proof}
+  \item[24]
+    \begin{proof} by way of mathematical induction:\\
+      In the base case, $n=1$, $1/2 \leq 1/2$, which is true.
+
+      Now suppose that $1/(2n) \leq [1 \cdot 3 \cdot 5 \cdot \dots \cdot
+      (2n-1)]/(2 \cdot 4 \cdot \dots \cdot 2n$ for some positive $n$.
+
+      Then $\frac{1}{2n} \leq \frac{1 \cdot 3 \cdot \dots \cdot (2n-1)}
+      {2\cdot4\cdot \dots \cdot 2n}\equiv \frac{1}{2n}\frac{2n}{2n+2} \leq
+      \frac{1 \cdot 3 \cdot \dots \cdot (2n-1)}{2\cdot4\cdot \dots \cdot 2n}
+      \frac{2n}{2n+2}$ (given that $\frac{2n}{2n+2}$ is positive, which it is
+      as $n$ is positive), which is less than
+      $\frac{1\cdot3\cdot \dots \cdot (2(n+1)-1)}
+      {2\cdot 4 \cdot \dots \cdot 2(n+2)}$. By the transitivity of inequality,
+      then, $1/(2(n+1)) \leq \frac{1 \cdot 3 \cdot \dots \cdot (2(n+1)-1)}
+      {2\cdot4\cdot \dots \cdot (2(n+1))}$.
+
+      Since the $n+1$ case followed from the $n$ case, by the principle of
+      mathematical induction, the inequality is true when $n$ is a positive
+      integer.
+    \end{proof}
+  \item[30]
+    \begin{proof} by way of mathematical induction:\\
+      In the base case, $n=1$, $H_1 = 2H_1 - 1 = 1$, which is true.
+
+      Now suppose that $H_1 + H_2 + \dots + H_n = (n+1)H_n -n$ for some $n$.
+      Then
+      \begin{align*}
+        H+1 + H_2 + \dots + H_n + H_n+1
+        &= (n+1)H_n - n + H_n+1\\
+        &= (n+1)H_n + \frac{n+1}{n+1} - \frac{n+1}{n+1} -n + H_n+1\\
+        &= (n+1)H_{n+1} - n - 1 + H_n+1\\
+        &= (n+2)H_{n+1} - n - 1\\
+        &= ((n+1) + 1)H_{n+1} - (n+1)
+      \end{align*}
+      Since the $n+1$th case followed from the $n$th case, by the principle
+      of mathematical induction,
+      $H_1 + H_2 + \dots + H_n = (n+1)H_n -n$
+    \end{proof}
+  \item[36]
+    \begin{proof} by induction:\\
+      In the base case, $n=1$, $4^2+5^1=21$, which is divisible by 21.
+
+      Now suppose that $4^{n+1} + 5^{2n-1}$ is divisible by 21. Then there
+      exists some integer $k$ such that $21k=4^{n+1} + 5^{2n-1}$. Then
+      \begin{align*}
+        4^{(n+1)+1} + 5^{2(n+1)-1}
+        &= 4 \cdot 4^{n+1} + 25 \cdot 5^{2n-1}\\
+        &= 4 (4^{n+1} + 5^{2n-1}) + 21 \cdot 5^{2n-1}\\
+        &= 4 (21k) + 21 \cdot 5^{2n-1}\\
+        &= 21(4k + 5^2n-1)
+      \end{align*}
+      which is divisible by 21.
+
+      Since the $n+1$th case followed from the $n$th case, by the principle
+      of mathematical induction, 21 divides $4^{n+1}+5^{2n-1}$ whenever $n$
+      is a positive integer.
+    \end{proof}
+  \item[46]
+    \begin{proof}
+      In the base case, a set of 3 elements has exactly 1 subset of three
+      elements, the set itself.
+
+      Now suppose that a set of $n$ elements has $n(n-1)(n-2)/6$ elements for
+      some $n$. Then adding 1 element to this set allows us to create $n(n-1)/2$
+      new subsets where one element is the new element, and the other two are
+      chosen from the existing set. So the new set of all subsets of length 3
+      contains $n(n-1)(n-2)/6 + n(n-1)/2 = \frac{n(n-1)(n-2) + 3n(n-1)}{6} =
+      \frac{n^3 -3n^2 + 2n + 3n^2 -3n}{6} = \frac{n^3-n}{6} =
+      \frac{(n+1)(n)(n-1)}{6} = \frac{(n+1)((n+1)-1)((n+1)-2)}{6}$ elements.
+
+      Since the $n+1$th case followed from the $n$th case, by the principle
+      of mathematical induction, a set with $n$ elements has $n(n-1)(n-2)/6$
+      subsets containing exactly 3 elements, $n \geq 3$.
+    \end{proof}
+\end{enumerate}
+
+\end{document}
