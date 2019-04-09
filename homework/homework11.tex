@@ -1,0 +1,149 @@
+\documentclass{article} 
+
+\title{Homework 10}
+\author{Chandler Swift}
+\date{April 2, 2019}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    % 5.2: 4, 6, 12, 30
+
+%    \begin{proof} by way of mathematical induction:\\
+%      When $n=1$, $1 \cdot 1! = 1 = (1+1)!-1$, which is true.
+%
+%      Now suppose that $1 \cdot 1! + 2 \cdot 2! + \dots + n \cdot n! = (n+1)! - 1$
+%      for some $n$.
+%      \begin{align*}
+%        1 \cdot 1! + \dots + n \cdot n! + (n+1)(n+1)!
+%        &= (n+1)! - 1 + (n+1)(n+1)!\\
+%        &= 1(n+1)! + (n+1)(n+1)! - 1\\
+%        &= (n+2)(n+1)! -1\\
+%        &= (n+2)! - 1\\
+%        &= ((n+1) + 1)! -1
+%      \end{align*}
+%
+%      Since the $n+1$th case followed from the $n$th case, by the principle
+%      of mathematical induction,
+%      $1 \cdot 1! + 2 \cdot 2! + \dots + n \cdot n! = (n+1)! - 1$.
+%    \end{proof}
+
+  \item[4] Let $P(n)$ be the statement that a postage of $n$ cents can be
+    formed using just 4-cent stamps and 7-cent stamps. The aprts of this
+    exercise outline a strong induction proof that $P(n)$ is true for all
+    integers $n \geq 18$. 
+    \begin{enumerate}
+      \item Show that the statements $P(18),P(19),P(20),P(21)$ are true,
+        completing the basis step of a proof by strong induction.
+        \begin{proof}
+          For 18 cents of stamps, take two seven-cent stamps and one four-cent
+          stamp.
+
+          For 19 cents of stamps, take one seven-cent stamp and three four-cent
+          stamps.
+
+          For 20 cents of stamps, take five four-cent stamps.
+
+          For 21 cents of stamps, take three seven-cent stamps.
+        \end{proof}
+      \item The inductive hypothesis of a proof by strong induction that $P(n)$
+        is true for all integers $n \geq 18$ is that $P(1), P(2), \dots P(n-1)$
+        are all true.
+      \item In the inductive step, we need to prove that for some $P(n)$, if
+        the inductive hypothesis holds, then $P(n)$ is true.
+      \item
+        \begin{proof}
+          Suppose any amount 18 or more which is less than $k$ can be made up
+          of stamps of denominations of four and seven cents. Since $k\geq21$,
+          either $k=21$ or $k \geq 22$. If $k=21$, then $k$ can be made up of
+          3 7-cent stamps. If $k \geq 22$, then $k-4 \geq 18$, and so by the
+          inductive hypothesis can be made into a combination of four and seven
+          cent stamps. Then $k$ an be made of the combination of $k-4$ and an
+          additional four-cent stamp.
+        \end{proof}
+      \item Since the base cases were true, and all following cases were true
+        if the base cases were true, then all cases greater than or equal to
+        the base case must be true.
+    \end{enumerate}
+  \item[6]
+    \begin{enumerate}
+      \item The possible amounts, in cents, are 0, 3, 6, 9, 10, 12, 13, 15, 16,
+        and $n \geq 18$.
+      \item
+        \begin{proof} by mathematical induction:
+          For small amounts, the following amounts can be formed, represented
+          as $a: (b,c)$, where $a$ is the amount of postage, and $b$ and $c$
+          are the number of 3- and 10-cent stamps respectively: $0: (0,0),
+          3: (1,0), 6: (2,0), 9: (3,0), 10: (0,1), 12: (4,0): 13: (1,1),
+          15: (5,0), 16: (2,1)$.
+
+          For amounts $n \geq 18$: In the base case, $18: (6,0)$.
+
+          Now suppose that for some $k \geq 19$, $k$ can be formed from stamps
+          of 3 and 10 cents. This must consist of at least 3 3-cent stamps
+          or at least 2 10-cent stamps, since the maximum amount that can
+          be made from less than 3 3-cent and 2 10-cent stamps is 16 cents.
+          If there are 3 3-cent stamps, remove them and replace with a 10-cent
+          stamp, incrementing the value by 1. Otherwise, there must be 2
+          10-cent stamps. Remove these and replace with 7 3-cent stamps,
+          also increasing the value by 1. Therefore $k+1$ cents can be formed
+          if $k$ can.
+
+          Since the $k+1$ case followed from the $k$, by the principle of
+          mathematical induction, any number $n \geq 18$ can be formed from
+          3- and 10-cent stamps.
+        \end{proof}
+      \item
+        \begin{proof} by strong induction:
+
+          For small amounts, the following amounts can be formed, represented
+          as $a: (b,c)$, where $a$ is the amount of postage, and $b$ and $c$
+          are the number of 3- and 10-cent stamps respectively: $0: (0,0),
+          3: (1,0), 6: (2,0), 9: (3,0), 10: (0,1), 12: (4,0): 13: (1,1),
+          15: (5,0), 16: (2,1)$.
+
+          For amounts $n \geq 18$: In the base cases, $18: (6,0), 19: (3,1),
+          20: (0,2)$.
+
+          Now suppose that for some $k \geq 21$, all numbers $n | 18 \leq n
+          < 21$ can be formed from three- and ten-cent stamps. \textit{
+          (Inductive Hypothesis)} Since $k \geq 21$, then $k-3 \geq 18$, and
+          so can be formed from three- and ten-cent stamps. Then $k$ can be
+          formed from the combination making up $k-3$ plus one three-cent
+          stamp.
+
+          Since the $k$th case followed from the previous cases, by the
+          principle of strong mathematical induction, any integer number
+          of cents greater than or equal to 18 can be formed from three-
+          and ten-cent stamps.
+        \end{proof}
+    \end{enumerate}
+  \item[12]
+    \begin{proof} by strong mathematical induction:
+      
+        In the base case, $1 = 2^0$.
+
+        Now suppose that for some $k$, where for any $n | 1 \leq n \leq k$, $n$
+        can be written as a sum of distinct powers of two. Then if $k+1$ is
+        even, $\frac{k+1}{2}$ is an integer, and can be written as a sum of
+        distinct powers of two $2^a + 2^b + 2^c\dots$. Then $k+1$ can be written
+        as $2^{a+1} + 2^{b+1} + \cdots$, multiplying each power of two by two, 
+        which means that they are still distinct.
+
+        Now if $k+1 is odd$, then $k$ is even, and $k+1$ can be written as 
+        $k + 2^0$, and since $k$ is even, it cannot contain $2^0$, so the sum
+        is of distinct powers of two.
+
+        Since the $k+1$ case followed from the previous cases, by the principle
+        of strong mathematical induction, any positive integer can be written
+        as a sum of distinct powers of two.
+    \end{proof}
+  \item[30]
+    The induction step assumes that both $a^j = 1$ and $k > 0$. No base case
+    can be shown where both of these are true.
+\end{enumerate}
+
+\end{document}
