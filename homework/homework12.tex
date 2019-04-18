@@ -1,0 +1,71 @@
+\documentclass{article} 
+
+\title{Homework 12}
+\author{Chandler Swift}
+\date{April 11, 2019}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    % 8, 10, 16, 24, 32, 50
+  \item[8] $26\cdot25\cdot24=15600$
+  \item[10] $2^8=256$
+  \item[16] $26^4-25^4 = 66351$
+  \item[24]
+    % chandler:~/ $ python3
+    % Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+    % [GCC 8.2.0] on linux
+    % Type ``help'', ``copyright'', ``credits'' or ``license'' for more information.
+    % >>> len(list(filter(lambda x: x % 9 &=  0, range(1000,10000))))
+    % 1000
+    % >>> len(list(filter(lambda x: x % 2 &=  0, range(1000,10000))))
+    % 4500
+    % >>> len(list(filter(lambda x: str(x)[0] != str(x)[1], range(1000,10000))))
+    % 8100
+    % >>> len(list(filter(lambda x: x % 3 != 0, range(1000,10000))))
+    % 6000
+    % >>> len(list(filter(lambda x: x % 5 &=  0 or x % 7 &=  0, range(1000,10000))))
+    % 2829
+    % >>> len(list(filter(lambda x: x % 5 != 0 and x % 7 != 0, range(1000,10000))))
+    % 6171
+    % >>> len(list(filter(lambda x: x % 5 &=  0 and x % 7 != 0, range(1000,10000))))
+    % 1543
+    % >>> len(list(filter(lambda x: x % 5 &=  0 and x % 7 &=  0, range(1000,10000))))
+    % 257
+    % >>> 
+    % chandler:~/ $       
+    \begin{enumerate}
+      \item 1000
+      \item 4500
+      \item 8100
+      \item 6000
+      \item 2829
+      \item 6171
+      \item 1543
+      \item 257
+    \end{enumerate}
+  \item[32]
+    \begin{enumerate}
+      \item $26^8 = 208827064576$
+      \item $\frac{26!}{(26-8)!} = 26 \cdot 25 \cdot 24 \cdot 23 \cdot 22
+        \cdot 21 \cdot 20 \cdot 19 = 62990928000$
+      \item $26^7 = 8031810176$
+      \item $\frac{25!}{(26-8)!} = 25 \cdot 24 \cdot 23 \cdot 22
+        \cdot 21 \cdot 20 \cdot 19 = 2422728000$
+      \item $26^6 = 308915776$
+      \item $26^6 = 308915776$
+      \item $26^4 = 456976$
+      \item $2 \cdot 26^6 = 617831552$
+    \end{enumerate}
+  \item[50] Assuming that the question is written to intend to exclude bit
+    strings that both begin with two 0s and end with three 1s:
+
+    $2^5  + 2^4 - 2^2 = 44$
+
+    Otherwise, $2^5 + 2^4 = 48$.
+\end{enumerate}
+
+\end{document}
