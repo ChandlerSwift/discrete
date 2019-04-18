@@ -1,0 +1,118 @@
+\documentclass{article} 
+
+\title{Homework 13}
+\author{Chandler Swift}
+\date{April 18, 2019}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\maketitle
+6.2:
+\begin{enumerate}
+    % 6.2: 4, 12, 16, 28
+    % 6.3: 12, 22, 32, 34, 36
+  \item[4]
+    \begin{enumerate}
+      \item 5
+      \item 13
+    \end{enumerate}
+  \item[12]
+    \begin{proof}
+      For any four points, their $x$- and $y$-coordinates must be either
+      (even, even), (even, odd), (odd, even), or (odd, odd). Adding another
+      coordinate must then provide a duplicate of one of these combinations.
+      So the new point and the point with the same even/odd combination has a
+      midpoint at coordinates where both the $x$-coordinate and the $y$-
+      coordinate have the same parity, and therefore its average is an integer
+      (either $2j + 2k = 2(j+k)$, or $2j+1 + 2k+1 = 2(j+k+1)$ for some $j,k$).
+    \end{proof}    
+  \item[16]
+    \begin{enumerate}
+      \item
+        \begin{proof}
+          The first ten positive integers form five groups that sum to 11:
+          1 and 10, 2 and 9, 3 and 8, 4 and 7, and 6 and 5.
+
+          Since 7 numbers have been chosen from five groups, at least least
+          two numbers must be in the same groups as other numbers.
+        \end{proof}
+      \item No. (There must be one pair.)
+    \end{enumerate}
+  \item[28] With people $A,B,C,D,E$, if $(A,B),(A,C),(A,D),(D,E),(C,E)$ are
+    friends and the rest are enemiees, this configuration results in a group
+    where no three people are mutual friends nor enemies.
+\end{enumerate}
+6.3:
+\begin{enumerate}
+  \item[12]
+    \begin{enumerate}
+      \item ${10 \choose 3}$
+      \item ${10 \choose 3} + {10 \choose 2} + {10 \choose 1} + {10 \choose 0}$
+      \item ${10 \choose 3} + {10 \choose 4} + \dots + {10 \choose 10}$
+      \item ${10 \choose 5}$
+    \end{enumerate}
+  \item[22]
+% chandler:~/ $ python3                                                    [22:23:43]
+% Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+% [GCC 8.2.0] on linux
+% Type "help", "copyright", "credits" or "license" for more information.
+% >>> import itertools
+% >>> letters = [c for c in "abcdefgh"]
+% >>> len(list(filter(lambda x: 'ed' in "".join(x), itertools.permutations(letters)))) 
+% 5040
+% >>> len(list(filter(lambda x: 'cde' in "".join(x), itertools.permutations(letters))))
+% 720
+% >>> len(list(filter(lambda x: 'ba' in "".join(x) and 'fgh' in "".join(x), itertools.permutations(letters))))
+% 120
+% >>> len(list(filter(lambda x: 'ab' in "".join(x) and 'de' in "".join(x) and 'gh' in "".join(x), itertools.permutations(letters))))
+% 120
+% >>> len(list(filter(lambda x: 'cab' in "".join(x) and 'bed' in "".join(x), itertools.permutations(letters))))
+% 24
+% >>> len(list(filter(lambda x: 'bed' in "".join(x) and 'cba' in "".join(x), itertools.permutations(letters))))
+% 0
+% >>> 
+% chandler:~/ $ 
+    \begin{enumerate}
+      \item 5040
+      \item 720
+      \item 120
+      \item 120
+      \item 24
+      \item 0
+    \end{enumerate}
+  \item[32]
+    \begin{enumerate}
+      \item ${7 \choose 5} + {7 \choose 4}{9 \choose 1} +
+        {7 \choose 3}{9 \choose 2} +
+        {7 \choose 2}{9 \choose 3} +
+        {7 \choose 1}{9 \choose 4}$
+      \item ${7 \choose 4}{9 \choose 1} +
+        {7 \choose 3}{9 \choose 2} +
+        {7 \choose 2}{9 \choose 3} +
+        {7 \choose 1}{9 \choose 4}$
+    \end{enumerate}
+  \item[34] 
+    \begin{enumerate}
+      \item $26^6-25^6$
+% chandler:~/ $ python3                                              [10:35:49]
+% Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+% [GCC 8.2.0] on linux
+% Type "help", "copyright", "credits" or "license" for more information.
+% >>> import itertools
+% >>> import string
+% >>> letters = list(string.ascii_lowercase)
+% >>> len(list(filter(lambda x: 'a' in "".join(x) and 'b' in "".join(x), itertools.permutations(letters, 6))))
+% 7650720
+% >>> 
+% chandler:~/ $  
+      \item $6 \cdot 5 \cdot 24 \cdot 23 \cdot 22 \cdot 21 = 7650720$
+      \item $4 \cdot 24 \cdot 23 \cdot 22 \cdot 21$
+      \item $(5 + 4 + 3 + 2 + 1)(24 \cdot 23 \cdot 22 \cdot 21)$
+    \end{enumerate}
+  \item[36] ${15\choose6} + ({15\choose5} \cdot {10\choose1}) +
+    ({15\choose4} \cdot {10\choose2})$
+\end{enumerate}
+
+\end{document}
