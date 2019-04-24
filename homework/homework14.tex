@@ -1,0 +1,66 @@
+\documentclass{article} 
+
+\title{Homework 14}
+\author{Chandler Swift}
+\date{April 24, 2019}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\maketitle
+
+\subsection*{6.4:}
+
+\begin{enumerate}
+    % 6.4: 8, 14, 32, 34
+    % 6.5: 8, 16, 18, 28, 34, 40, 56
+  \item[8] ${17 \choose 8}$
+  \item[14]  If $k$ even and $-100 \leq k \leq 100$, then ${100 \choose \frac{k+100}{2}}$; else 0.
+  \item[32]
+    \begin{enumerate}
+      \item \begin{proof}
+          
+        \end{proof}
+      \item ${2n \choose 2} = \frac{2n \cdot (2n-1)}{2} = 2n^2 - n = n^2 - n + n^2 = 2{n \choose 2} + n^2$
+    \end{enumerate}
+  \item[34] \begin{proof}
+      Suppose we are selecting a committee as described.
+      
+      We can select a chairperson from among the $n$ mathematics professors
+      and then choose $n-1$ members from the other $2n-1$ people, yielding
+      $n{2n-1 \choose n-1}$ possible selections. 
+
+      Alternatively, we must have some number of mathematics professors in
+      the group, which must be at least 1 and at most $n$. For each number $k$
+      from 1 to $n$, we select a chairperson, and choose $k$ math profs and $n-k$
+      CS profs. So we have the total $\sum_{k=1}^n k{n \choose k}^2$.
+
+      Since both methods counted to the same number, they must be equal.
+    \end{proof}
+\end{enumerate}
+
+\subsection*{6.5:}
+
+\begin{enumerate}
+  \item[8] ${32 \choose 12}$
+  \item[16]
+    \begin{enumerate}
+      \item ${22 \choose 5}$
+      \item ${14 \choose 5}$
+      \item ${34 \choose 5} - {28 \choose 5}$
+      \item ${25 \choose 5} - {17 \choose 5}$
+    \end{enumerate}
+  \item[18] ${20 \choose 2}{18 \choose 4}{14 \choose 3}{11 \choose 1}
+             {10 \choose 2}{8  \choose 3}{5  \choose 2}{3  \choose 3}$
+  \item[28] $6 \cdot {8 \choose 4}$
+  \item[34] $6 \cdot {5 \choose 2} \cdot 3 \cdot 2$
+  \item[40] 
+    \begin{enumerate}
+      \item ${40 \choose 10}{30 \choose 10}{20 \choose 10}$
+      \item ${40 \choose 10}{30 \choose 10}{20 \choose 10}/4!$
+    \end{enumerate} 
+  \item[56] 4
+\end{enumerate}
+
+\end{document}
